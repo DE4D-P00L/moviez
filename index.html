@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moviez</title>
+    <link rel="stylesheet" href="nav.css" />
+    <link rel="stylesheet" href="card.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./checkLogin.js"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="nav">
+        <a href="./index.html" class="nav-title">Moviez</a>
+        <ul class="nav-links close">
+          <li class="nav-link">
+            <a href="./movies/" class="link">Movies</a>
+          </li>
+          <li class="nav-link"><a href="./tv/" class="link">TV shows</a></li>
+          <li class="nav-link">
+            <a href="../authentication/" class="link" id="loginButton">Login</a>
+            <button id="logoutButton">Logout</button>
+          </li>
+        </ul>
+        <button class="ham-menu">
+          <img src="./assets/menu.png" alt="" />
+        </button>
+      </div>
+    </nav>
+    <section id="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <div class="movie-details">
+          <h2 class="hero-title" id="hero-title">
+            Kingdom of the Planet of the Apes
+          </h2>
+          <p class="hero-summary" id="hero-summary">
+            Several generations in the future following Caesar's reign, apes are
+            now the dominant species and live harmoniously while humans have
+            been reduced to living in the shadows. As a new tyrannical ape
+            leader builds his empire, one young ape undertakes a harrowing
+            journey that will cause him to question all that he has known about
+            the past and to make choices that will define a future for apes and
+            humans alike.
+          </p>
+          <a href="./details" class="hero-cta" id="hero-cta">Know more</a>
+        </div>
+        <img
+          src="https://image.tmdb.org/t/p/w500/gKkl37BQuKTanygYQG1pyYgLVgf.jpg"
+          alt=""
+          id="poster"
+          class="hero-poster" />
+      </div>
+    </section>
+    <section id="all-media">
+      <div class="section-container">
+        <h2 class="section-title">Popular Shows and Movies</h2>
+        <div class="card-container" id="card-container"></div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+    <script src="mobileMenu.js"></script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --width-max: 1600px;
+}
+
+body {
+  background-color: rgb(24, 33, 51);
+  background: linear-gradient(127deg, rgb(29, 5, 52) 0%, rgb(33, 53, 88) 100%);
+}
+
+.tv-list {
+  min-height: 100dvh;
+  padding: 50px 0;
+  max-width: var(--width-max);
+  margin-inline: auto;
+}
+
+.searchbox {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  #search-input {
+    border-radius: 999px;
+    padding: 8px 16px;
+    background-color: rgb(72, 92, 131);
+    width: clamp(200px, 70vw, 800px);
+    border: none;
+    color: white;
+    font-size: 1.15em;
+  }
+
+  #search-input::placeholder {
+    color: white;
+  }
+}

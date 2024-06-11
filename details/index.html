@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Details</title>
+    <link rel="stylesheet" href="../nav.css" />
+    <link rel="stylesheet" href="./details.css" />
+    <script src="./checkLogin.js"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="nav">
+        <a href="../index.html" class="nav-title">Moviez</a>
+        <ul class="nav-links close">
+          <li class="nav-link">
+            <a href="../movies" class="link">Movies</a>
+          </li>
+          <li class="nav-link"><a href="../tv/" class="link">TV shows</a></li>
+          <li class="nav-link">
+            <a href="../authentication/" class="link" id="loginButton">Login</a>
+            <button id="logoutButton">Logout</button>
+          </li>
+        </ul>
+        <button class="ham-menu">
+          <img src="../assets/menu.png" alt="" />
+        </button>
+      </div>
+    </nav>
+    <section class="details" id="banner">
+      <div class="overlay"></div>
+      <div class="content">
+        <div class="details">
+          <h2 class="title">Lorem ipsum dolor sit, amet consectetur</h2>
+          <p class="summary">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. A culpa
+            autem totam dolorum veritatis voluptates quo tempora accusantium
+            incidunt maxime quasi ipsa, illo nesciunt commodi doloremque quas
+            voluptate illum maiores?
+          </p>
+          <div class="releaseDate">
+            <h3>Release Date:</h3>
+            <h3 class="date">__-__-____</h3>
+          </div>
+          <div class="features"></div>
+          <div class="otherDetails">
+            <div>Origin: <span id="region">__</span></div>
+            <div>Revenue: $<span id="earning">0</span></div>
+            <div>Rating: <span id="rating">0</span></div>
+            <div>Runtime: <span id="runtime">0</span> mins</div>
+          </div>
+        </div>
+        <div class="poster">
+          <img src="" alt="" id="poster" />
+        </div>
+      </div>
+    </section>
+    <script src="./script.js"></script>
+    <script src="../mobileMenu.js"></script>
+  </body>
+</html>
