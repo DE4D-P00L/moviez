@@ -6,6 +6,58 @@
   --width-max: 1600px;
 }
 
+html {
+  --s: 50px;
+  --c: #191b22;
+  --_s: calc(2 * var(--s)) calc(2 * var(--s));
+  --_g: 35.36% 35.36% at;
+  --_c: #0000 66%, #20222a 68% 70%, #0000 72%;
+  background: radial-gradient(var(--_g) 100% 25%, var(--_c)) var(--s) var(--s) /
+      var(--_s),
+    radial-gradient(var(--_g) 0 75%, var(--_c)) var(--s) var(--s) / var(--_s),
+    radial-gradient(var(--_g) 100% 25%, var(--_c)) 0 0 / var(--_s),
+    radial-gradient(var(--_g) 0 75%, var(--_c)) 0 0 / var(--_s),
+    repeating-conic-gradient(var(--c) 0 25%, #0000 0 50%) 0 0 / var(--_s),
+    radial-gradient(var(--_c)) 0 calc(var(--s) / 2) / var(--s) var(--s) var(--c);
+  background-attachment: fixed;
+}
+
+/* Page loader */
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.loader-container.hidden {
+  display: none;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  border-top-color: #007bff;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 #hero {
   min-height: calc(100dvh - 75px);
   position: relative;
@@ -83,8 +135,8 @@
 
 #all-media {
   min-height: 50vh;
-  background: rgb(56, 13, 96);
-  background: linear-gradient(127deg, rgb(29, 5, 52) 0%, rgb(33, 53, 88) 100%);
+  /* background: rgb(30, 30, 30); */
+  /* background: linear-gradient(127deg, rgb(29, 5, 52) 0%, rgb(33, 53, 88) 100%); */
   padding: 30px 0;
 
   .section-container {
@@ -99,6 +151,48 @@
     color: white;
     margin-bottom: 20px;
     text-align: center;
+  }
+}
+
+#topRatedMovies {
+  min-height: 50vh;
+  /* background: rgb(56, 13, 96);
+  background: linear-gradient(127deg, rgb(29, 5, 52) 0%, rgb(33, 53, 88) 100%); */
+  padding: 30px 0;
+
+  .section-container-topMovie {
+    max-width: var(--width-max);
+    margin-inline: auto;
+    padding: 0 20px;
+
+    .section-title-topMovie {
+      font-size: 2.5em;
+      padding: 30px 0;
+      color: white;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
+}
+
+#topRatedShows {
+  min-height: 50vh;
+  /* background: rgb(56, 13, 96);
+  background: linear-gradient(127deg, rgb(29, 5, 52) 0%, rgb(33, 53, 88) 100%); */
+  padding: 30px 0;
+
+  .section-container-topShows {
+    max-width: var(--width-max);
+    margin-inline: auto;
+    padding: 0 20px;
+
+    .section-title-topShows {
+      font-size: 2.5em;
+      padding: 30px 0;
+      color: white;
+      margin-bottom: 20px;
+      text-align: center;
+    }
   }
 }
 

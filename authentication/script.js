@@ -19,11 +19,15 @@ signupLink.onclick = () => {
   return false;
 };
 
+const loginSpan = document.getElementById("loginSpan");
+const signupSpan = document.getElementById("signupSpan");
+
 const login = async () => {
   const username = document.getElementById("username").value.trim();
   const password = document.getElementById("password").value.trim();
   if (username == "" || password === "")
     return alert("Please enter valid values");
+  loginSpan.innerHTML = `<div class="lds-dual-ring"></div>`;
 
   const res = await fetch(endpoint + "/api/user/login", {
     method: "POST",
@@ -33,8 +37,12 @@ const login = async () => {
     body: JSON.stringify({ username, password }),
   });
   const data = await res.json();
-  if (data.error) return alert(data.error);
+  if (data.error) {
+    loginSpan.innerHTML = "Login";
+    return alert(data.error);
+  }
   localStorage.setItem("user", JSON.stringify(data));
+  loginSpan.innerHTML = "Login";
   window.location.href = "../index.html";
 };
 
@@ -47,6 +55,8 @@ const signup = async () => {
 
   if (username === "" || password === "" || confirmPassword === "")
     return alert("Please enter valid values");
+
+  signupSpan.innerHTML = `<div class="lds-dual-ring"></div>`;
   if (password !== confirmPassword) return alert("Passwords do not match");
 
   const res = await fetch(endpoint + "/api/user/signup", {
@@ -59,8 +69,12 @@ const signup = async () => {
 
   const data = await res.json();
   console.log(data);
-  if (data.error) return alert(data.error);
+  if (data.error) {
+    signupSpan.innerHTML = "Signup";
+    return alert(data.error);
+  }
   localStorage.setItem("user", JSON.stringify(data));
+  signupSpan.innerHTML = "Signup";
   window.location.href = "../index.html";
 };
 

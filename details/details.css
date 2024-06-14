@@ -6,6 +6,41 @@
   --width-max: 1600px;
 }
 
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.loader-container.hidden {
+  display: none;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  border-top-color: #007bff;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 #banner {
   min-height: calc(100dvh - 75px);
   background-position: center center;
@@ -102,6 +137,35 @@
 
           span {
             font-weight: 600;
+          }
+        }
+      }
+      #seasons-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 10px;
+
+        #seasons {
+          display: flex;
+          font-size: 1em;
+          font-weight: 500;
+          height: 30px;
+          padding: 0 10px;
+          border-radius: 5px;
+        }
+        .seasons-details {
+          display: flex;
+          gap: 10px;
+          .seasonPoster {
+            height: 200px;
+          }
+
+          .season-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
           }
         }
       }

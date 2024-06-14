@@ -1,6 +1,9 @@
 nav {
   background-color: rgb(22, 22, 37);
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+
   .nav {
     display: flex;
     justify-content: space-between;
@@ -77,6 +80,25 @@ nav {
       display: none;
     }
   }
+}
+
+nav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 3px;
+  display: block;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(185, 185, 185, 1) 30%,
+    rgb(185, 185, 185) 50%,
+    rgba(185, 185, 185, 1) 70%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 @media screen and (max-width: 600px) {

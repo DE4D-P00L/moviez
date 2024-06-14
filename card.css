@@ -4,12 +4,13 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+  transition: all 150ms linear;
 
   .card {
     display: flex;
     flex-direction: column;
     width: 170px;
-    height: 270px;
+    min-height: 270px;
     background-color: rgb(232, 232, 232);
     padding: 10px;
     justify-content: space-between;
@@ -28,5 +29,11 @@
       color: black;
       text-decoration: none;
     }
+  }
+
+  .card:hover {
+    transform: scale(1.15);
+    transition: all 150ms linear;
+    box-shadow: -5px 5px 8px 5px rgba(0, 0, 0, 0.3);
   }
 }

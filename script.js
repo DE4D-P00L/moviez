@@ -1,4 +1,5 @@
 const endpoint = "https://moviez-backend.onrender.com";
+// const endpoint = "http://localhost:5000";
 
 const logoutButton = document.querySelector("#logoutButton");
 
@@ -6,6 +7,13 @@ logoutButton.addEventListener("click", () => {
   localStorage.removeItem("user");
   window.location.href = "./authentication/";
 });
+
+const topRatedMoviesContainer = document.querySelector(
+  "#card-container-topMovie"
+);
+const topRatedShowsContainer = document.querySelector(
+  "#card-container-topShows"
+);
 
 const fetchMovies = () => {
   let popularMovie;
@@ -55,7 +63,57 @@ const fetchAllMedia = async () => {
   });
 };
 
-window.onload = function () {
+const fetchTrendingMovies = async () => {
+  const res = await fetch(endpoint + "/api/trending/movies");
+  const data = await res.json();
+
+  data?.movies?.forEach((item) => {
+    const card = document.createElement("a");
+    card.className = "card";
+    card.href = `./details/index.html?id=${item?.id}&type=movie`;
+
+    const cardImage = document.createElement("img");
+    cardImage.className = "card-image";
+    cardImage.src = `https://image.tmdb.org/t/p/w500/${item?.poster_path}`;
+
+    const cardTitle = document.createElement("h3");
+    cardTitle.className = "card-title";
+    cardTitle.innerText = item?.title || item?.original_name;
+
+    card.appendChild(cardImage);
+    card.appendChild(cardTitle);
+    topRatedMoviesContainer.appendChild(card);
+  });
+};
+
+const fetchTrendingShows = async () => {
+  const res = await fetch(endpoint + "/api/trending/tv");
+  const data = await res.json();
+
+  data?.tv?.forEach((item) => {
+    const card = document.createElement("a");
+    card.className = "card";
+    card.href = `./details/index.html?id=${item?.id}&type=tv`;
+
+    const cardImage = document.createElement("img");
+    cardImage.className = "card-image";
+    cardImage.src = `https://image.tmdb.org/t/p/w500/${item?.poster_path}`;
+
+    const cardTitle = document.createElement("h3");
+    cardTitle.className = "card-title";
+    cardTitle.innerText = item?.title || item?.original_name;
+
+    card.appendChild(cardImage);
+    card.appendChild(cardTitle);
+    topRatedShowsContainer.appendChild(card);
+  });
+};
+
+window.onload = async function () {
   fetchMovies();
-  fetchAllMedia();
+  await fetchAllMedia();
+  await fetchTrendingMovies();
+  await fetchTrendingShows();
+  const loaderContainer = document.querySelector(".loader-container");
+  loaderContainer.classList.add("hidden");
 };
