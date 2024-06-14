@@ -72,6 +72,9 @@ const fetchDetails = async () => {
     data.movie.title || data.movie.name || data.movie.original_name;
   summary.innerText = data.movie.overview;
 
+  document.title =
+    data.movie.title || data.movie.name || data.movie.original_name;
+
   let date;
   if (contentType === "movie") {
     date = new Date(data.movie.release_date);

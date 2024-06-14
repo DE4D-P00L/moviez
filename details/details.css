@@ -66,7 +66,7 @@
     max-width: var(--width-max);
     margin-inline: auto;
     color: white;
-    height: calc(100dvh - 75px);
+    min-height: calc(100dvh - 75px);
 
     .details {
       flex: 1;

@@ -22,6 +22,10 @@ html {
   background-attachment: fixed;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 /* Page loader */
 .loader-container {
   position: fixed;
@@ -138,11 +142,12 @@ html {
   /* background: rgb(30, 30, 30); */
   /* background: linear-gradient(127deg, rgb(29, 5, 52) 0%, rgb(33, 53, 88) 100%); */
   padding: 30px 0;
+  position: relative;
 
   .section-container {
     max-width: var(--width-max);
     margin-inline: auto;
-    padding: 0 20px;
+    /* padding: 0 20px; */
   }
 
   .section-title {
@@ -159,11 +164,12 @@ html {
   /* background: rgb(56, 13, 96);
   background: linear-gradient(127deg, rgb(29, 5, 52) 0%, rgb(33, 53, 88) 100%); */
   padding: 30px 0;
+  position: relative;
 
   .section-container-topMovie {
     max-width: var(--width-max);
     margin-inline: auto;
-    padding: 0 20px;
+    /* padding: 0 20px; */
 
     .section-title-topMovie {
       font-size: 2.5em;
@@ -184,7 +190,7 @@ html {
   .section-container-topShows {
     max-width: var(--width-max);
     margin-inline: auto;
-    padding: 0 20px;
+    /* padding: 0 20px; */
 
     .section-title-topShows {
       font-size: 2.5em;
