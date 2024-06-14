@@ -56,7 +56,13 @@ Moviez is a fully responsive website built with HTML, CSS, and JavaScript that l
     git clone https://github.com/DE4D-P00L/moviez.git
 ```
 
-5. Open `index.html` file
+5. Start backend server:
+
+```bash
+    npm run dev
+```
+
+6. Open `index.html` file
 
 ## Deployment:
 
