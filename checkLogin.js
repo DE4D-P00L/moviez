@@ -1,3 +1,3 @@
 const user = localStorage.getItem("user") || "";
 
-// if (!user || user.length <= 0) window.location.href = "./authentication/";
+if (!user || user.length <= 0) window.location.href = "./authentication/";

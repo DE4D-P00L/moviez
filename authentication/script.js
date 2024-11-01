@@ -29,19 +29,7 @@ const login = async () => {
     return alert("Please enter valid values");
   loginSpan.innerHTML = `<div class="lds-dual-ring"></div>`;
 
-  const res = await fetch(endpoint + "/api/user/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ username, password }),
-  });
-  const data = await res.json();
-  if (data.error) {
-    loginSpan.innerHTML = "Login";
-    return alert(data.error);
-  }
-  localStorage.setItem("user", JSON.stringify(data));
+  localStorage.setItem("user", username);
   loginSpan.innerHTML = "Login";
   window.location.href = "../index.html";
 };
@@ -59,21 +47,8 @@ const signup = async () => {
   signupSpan.innerHTML = `<div class="lds-dual-ring"></div>`;
   if (password !== confirmPassword) return alert("Passwords do not match");
 
-  const res = await fetch(endpoint + "/api/user/signup", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ username, password }),
-  });
 
-  const data = await res.json();
-  console.log(data);
-  if (data.error) {
-    signupSpan.innerHTML = "Signup";
-    return alert(data.error);
-  }
-  localStorage.setItem("user", JSON.stringify(data));
+  localStorage.setItem("user", username);
   signupSpan.innerHTML = "Signup";
   window.location.href = "../index.html";
 };
